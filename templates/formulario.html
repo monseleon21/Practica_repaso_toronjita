@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Pedidos </title>
+<link rel="stylesheet" href="C:\Users\Monse\OneDrive\Documentos\GitHub\PI_Softsit_POO\templates\PI_estilos.css">
+</head>
+<body>
+<div class="container">
+    <h2 style = "color: rgba(0, 0, 0, 0.936);" > Pedidos de fundas </h2>
+    <br>   <br>
+     <br>
+     <form action="/guardari" method="POST">
+
+      <input type ="text" name="txtfruta" placeholder="Fruta">
+      <input type ="text" name="txttemporada" placeholder="Temporada">
+      <input type ="text" name="txtprecio" placeholder="Precio">
+      <input type ="text" name="txtstock" placeholder="Stock">
+      
+      <button type="submit">Guardar</button>
+
+    </form>
+<br>
+<br>
+
+<h1>Albums Guardados</h1>
+<br>
+<table>
+
+ <thead>
+   <tr>
+    <td>Id: </td>
+    <td>Album: </td>
+    <td>Artista: </td>
+    <td>Año publicacion: </td>
+   </tr>
+ </thead>
+
+  <tbody>
+    {% for alb in listAlbums %}
+    <tr>
+        <td> {{alb.0}} </td>
+        <td> {{alb.1}} </td>
+        <td> {{alb.2}} </td>
+        <td> {{alb.3}} </td>
+        <td>
+            <a href=/editar/{{alb.0}}> Editar </a>
+            <a href=/eliminar/{{alb.0}}> Borrar </a>
+        </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+
+</table>
+  
+     <br>   <br>
+     <br>
+    </script>
+  </form>
+</div>
+</html>
+
