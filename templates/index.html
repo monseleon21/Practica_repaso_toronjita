@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang ='es'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutería</title>
+
+
+</head>
+<body>
+  <h1>Fruteria Toronjita </h1>
+  <br>
+     <form action="/guardari" method="POST">
+
+      <input type ="text" name="txtFruta" placeholder="Fruta">
+      <input type ="text" name="txtTemporada" placeholder="Temporada">
+      <input type ="number" name="txtPrecio" placeholder="Precio">
+      <input type ="number" name="txtStock" placeholder="Stock">
+      
+      <button type="submit">Guardar</button>
+
+    </form>
+<br>
+<br>
+
+<h1>Frutas guardadas </h1>
+<br>
+<table>
+
+ <thead>
+   <tr>
+    <td>Id: </td>
+    <br>
+    <td>Fruta: </td>
+    <br>
+    <td>Temporada: </td>
+    <br>
+    <td>Precio: </td>
+    <br>
+    <td>Stock: </td>
+   </tr>
+ </thead>
+
+  <tbody>
+    {% for consultID in consultID %}
+    <tr>
+      <td>{{ fruta[1] }}</td>
+      <td>{{ fruta[2] }}</td>
+      <td>{{ fruta[3] }}</td>
+      <td>{{ fruta[4] }}</td>
+        <td>
+            <a href=/editari/{{consultID.0}}> Editar </a>
+            <a href=/eliminari/{{consultID.0}}> Borrar </a>
+        </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+
+</table>
+  
+     <br>   <br>
+     <br>
+    </script>
+  </form>
+</div>
+</html>
+

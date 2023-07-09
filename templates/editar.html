@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Fruta a editar: </h1>
+    <br>
+    <br>
+    <form action="/actualizari/{{consultID.0}}" method="POST">
+
+        <input type ="text" name="txtFruta" placeholder="Fruta">
+        <input type ="text" name="txtTemporada" placeholder="Temporada">
+        <input type ="number" name="txtPrecio" placeholder="Precio">
+        <input type ="number" name="txtStock" placeholder="Stock">
+        
+        <button type="submit">Actualizar</button>
+
+    </form>
+</body>
+</html>
