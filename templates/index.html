@@ -45,10 +45,10 @@
   <tbody>
     {% for consultID in consultID %}
     <tr>
-      <td>{{ fruta[1] }}</td>
-      <td>{{ fruta[2] }}</td>
-      <td>{{ fruta[3] }}</td>
-      <td>{{ fruta[4] }}</td>
+        <td> {{consultID.0}} </td>
+        <td> {{consultID.1}} </td>
+        <td> {{consultID.2}} </td>
+        <td> {{consultID.3}} </td>
         <td>
             <a href=/editari/{{consultID.0}}> Editar </a>
             <a href=/eliminari/{{consultID.0}}> Borrar </a>

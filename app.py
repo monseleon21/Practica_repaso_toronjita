@@ -16,11 +16,8 @@ mysql= MySQL(app)
 #Declaramos una ruta
 @app.route('/')
 def index():
-  CC= mysql.connection.cursor();
-  CC.execute('select * from tbFrutas')
-  conFrutas= CC.fetchall()
-  print(conFrutas)
-  return render_template('index.html',listFrutas= conFrutas)
+
+  return render_template('index.html')
 
 @app.route('/guardari', methods=['POST'])
 def guardari():
@@ -43,7 +40,7 @@ def guardari():
 def editari(id):
    cursoID=mysql.connection.cursor()
    cursoID.execute('select*from tbFrutas where id=%s', (id,))
-   consultID=cursoID.fetchone()
+   consultID=cursoID.fechtchone()
 
    return render_template('editar.html', consultID=consultID)
 
@@ -82,21 +79,7 @@ def eliminarafruta(id):
         
     flash('Se elimino la Fruta en la BD :')
     return redirect(url_for('index'))
-    
-@app.route('/buscari', methods=['GET', 'POST'])
-def buscari():
-    if request.method == 'POST':
-        Vfruta = request.form['txtFruta']
-        
-        curslect = mysql.connection.cursor()
-        curslect.execute('SELECT * FROM tbFrutas WHERE fruta = %s', (Vfruta,))
-        CNT = curslect.fetchone()
-    
-    CS = mysql.connection.cursor()
-    CS.execute('SELECT fruta FROM tbFrutas')
-    frutas = CS.fetchall()
-    return render_template('buscar.html', list=frutas)
 
-#Ejecucion de servidor
-if __name__ =='__main__':
-    app.run(port=2000,debug=True)
+# Ejecutamos del servidor con el puerto 5000
+if __name__ == '__main__':
+    app.run(port=5000,debug=True)

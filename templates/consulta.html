@@ -18,7 +18,7 @@
         <select name="txtFruta" required>
           <option value="" disabled selected>Buscar fruta</option>
           {% for fruta in list %}
-            <option value="{{ fruta.0 }}">{{ fruta.0 }}</option>
+            <option value="{{ consultID.0 }}">{{ consultID.0 }}</option>
           {% endfor %}
         </select>
         <button type="submit">Buscar</button>
@@ -36,18 +36,12 @@
         </thead>
         <tbody>
             {% if list %}
-              {% for alb in list %}
+              {% for fruta in list %}
                 <tr>
-                  <td>{{ alb.0 }}</td>
-                  <td>{{ alb.1 }}</td>
-                  <td>{{ alb.2 }}</td>
-                  <td>{{ alb.3 }}</td>
-                  <td>{{ alb.4 }}</td>
-                </tr>
-              {% endfor %}
-            {% else %}
-              <tr>
-                <td colspan="5">No se encontraron resultados</td>
+                  <td> {{consultID.0}} </td>
+                  <td> {{consultID.1}} </td>
+                  <td> {{consultID.2}} </td>
+                  <td> {{consultID.3}} </td>
               </tr>
             {% endif %}
           </tbody>
